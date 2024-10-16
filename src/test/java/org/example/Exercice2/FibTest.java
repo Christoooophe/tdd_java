@@ -30,6 +30,13 @@ public class FibTest {
     }
 
     @Test
+    public void whenRangeIs_6_ThenResultContains_3() {
+        fib = new Fib(6);
+        List<Integer> result = fib.getFibSeries();
+        Assert.assertTrue(result.contains(3));
+    }
+
+    @Test
     public void whenRangeIs_6_ThenResultNotContain_4() {
         fib = new Fib(6);
         List<Integer> result = fib.getFibSeries();
