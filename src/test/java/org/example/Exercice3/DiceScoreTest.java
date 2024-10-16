@@ -29,9 +29,19 @@ public class DiceScoreTest {
     }
 
     @Test
-    public void whenDicesAreNotSame_4_5_ThenEquals_20() {
+    public void whenDicesAreNotSame_4_5_ThenEquals_5() {
         diceScore = new DiceScore(de);
         Mockito.when(de.getRoll()).thenReturn(4).thenReturn(5);
+
+        int result = diceScore.getScore();
+
+        Assert.assertEquals(5, result);
+    }
+
+    @Test
+    public void whenDicesAreNotSame_5_3_ThenEqualsTakeHighestAndEquals_5() {
+        diceScore = new DiceScore(de);
+        Mockito.when(de.getRoll()).thenReturn(5).thenReturn(3);
 
         int result = diceScore.getScore();
 
