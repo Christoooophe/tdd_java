@@ -1,4 +1,4 @@
-package org.example.Demo1;
+package org.example.exercices;
 
 public class GradingCalculator {
     public int Score;
