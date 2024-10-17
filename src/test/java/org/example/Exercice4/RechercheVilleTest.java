@@ -41,7 +41,7 @@ public class RechercheVilleTest {
     }
 
     @Test
-    public void WhenTextIsAsterisqu_ThenShouldReturnAll() {
+    public void WhenTextIsAsterisque_ThenShouldReturnAll() {
         rechercheVille = new RechercheVille();
         String mot = "*";
         List<String> result = rechercheVille.rechercher(mot);

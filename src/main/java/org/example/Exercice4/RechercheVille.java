@@ -10,6 +10,9 @@ public class RechercheVille {
 
     public List<String> rechercher(String mot)  {
         List<String> result = new ArrayList<>();
+        if (mot.equals("*")) {
+            return villes;
+        }
         if (mot.length() > 1) {
             for (String ville : villes) {
                 if (ville.toLowerCase().contains(mot.toLowerCase())) {
