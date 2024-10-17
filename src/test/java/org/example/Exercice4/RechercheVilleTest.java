@@ -31,4 +31,12 @@ public class RechercheVilleTest {
         List<String> result = rechercheVille.rechercher(mot);
         Assert.assertArrayEquals(List.of("Valence", "Vancouver").toArray(), result.toArray());
     }
+
+    @Test
+    public void WhenTextIsPartOfCityName_ape_ThenShouldReturn_Budapest() {
+        rechercheVille = new RechercheVille();
+        String mot = "ape";
+        List<String> result = rechercheVille.rechercher(mot);
+        Assert.assertArrayEquals(List.of("Budapest").toArray(), result.toArray());
+    }
 }
