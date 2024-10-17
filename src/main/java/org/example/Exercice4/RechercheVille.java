@@ -6,7 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RechercheVille {
-    public final List<String> villes = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
+
+    private final List<String> villes;
+
+    public RechercheVille(List<String> villes) {
+        this.villes = villes;
+    }
 
     public List<String> rechercher(String mot)  {
         List<String> result = new ArrayList<>();
