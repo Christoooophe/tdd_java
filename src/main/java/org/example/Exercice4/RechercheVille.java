@@ -11,9 +11,8 @@ public class RechercheVille {
     public List<String> rechercher(String mot)  {
         List<String> result = new ArrayList<>();
         if (mot.length() > 1) {
-            mot = mot.substring(0, 1).toUpperCase() + mot.substring(1).toLowerCase();
             for (String ville : villes) {
-                if (ville.contains(mot)) {
+                if (ville.toLowerCase().contains(mot.toLowerCase())) {
                     result.add(ville);
                 }
             }
