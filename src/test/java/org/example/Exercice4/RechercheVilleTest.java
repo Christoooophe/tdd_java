@@ -1,5 +1,6 @@
 package org.example.Exercice4;
 
+import org.example.Exercice4.Exception.NotFoundException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ public class RechercheVilleTest {
     @Test
     public void WhenTextLengthInferior_2_ThenThrowError() {
         rechercheVille = new RechercheVille();
-        String test = "a";
-        Assert.assertThrows(NotFoundException.class, () -> {rechercheVille.rechercher(test);});
+        String mot = "a";
+        Assert.assertThrows(NotFoundException.class, () -> {rechercheVille.rechercher(mot);});
     }
 }
