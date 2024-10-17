@@ -5,9 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
+import java.util.List;
+
 public class ShopTest {
     private Shop shop;
-    private List<Products> products;
+    private List<Product> products;
+
     @Before
     public void setUp() {
         shop = new Shop(products);
@@ -18,8 +21,8 @@ public class ShopTest {
     public void WhenFunctionCalledSellinAndQuality_5_10_ThenReturn_4_9() {
         Product product = new Product("Alimentaire", "Chocolat", 10, 5);
         shop.update(product);
-        Assert.assertEquals(9, product.getQuantity());
-        Assert.assertEquals(4, product.getSellIn());
+        Assert.assertEquals(4, product.getQuality());
+        Assert.assertEquals(9, product.getSellIn());
     }
 
     @Test
