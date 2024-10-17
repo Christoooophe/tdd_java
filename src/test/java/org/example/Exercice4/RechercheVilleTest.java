@@ -4,6 +4,7 @@ import org.example.Exercice4.Exception.NotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class RechercheVilleTest {
 
     @Before
     public void setUp(){
-        List<String> villes = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
+        villes = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
         rechercheVille = new RechercheVille(villes);
     }
 
@@ -48,6 +49,6 @@ public class RechercheVilleTest {
     public void WhenTextIsAsterisque_ThenShouldReturnAll() {
         String mot = "*";
         List<String> result = rechercheVille.rechercher(mot);
-        Assert.assertArrayEquals(List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul").toArray(), result.toArray());
+        Assert.assertArrayEquals(result.toArray(), villes.toArray());
     }
 }
