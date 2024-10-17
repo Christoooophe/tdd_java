@@ -2,15 +2,22 @@ package org.example.Exercice4;
 
 import org.example.Exercice4.Exception.NotFoundException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RechercheVille {
-    private List<String> villes;
+    private final List<String> villes = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
 
     public List<String> rechercher(String mot)  {
-        if (mot.length() < 2) {
-            throw new NotFoundException();
+        List<String> result = new ArrayList<>();
+        if (mot.length() > 1) {
+            for (String ville : villes) {
+                if (ville.contains(mot)) {
+                    result.add(ville);
+                }
+            }
+            return result;
         }
-        return null;
+        throw new NotFoundException();
     }
 }

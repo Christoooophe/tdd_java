@@ -4,6 +4,8 @@ import org.example.Exercice4.Exception.NotFoundException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class RechercheVilleTest {
     private RechercheVille rechercheVille;
 
@@ -12,5 +14,13 @@ public class RechercheVilleTest {
         rechercheVille = new RechercheVille();
         String mot = "a";
         Assert.assertThrows(NotFoundException.class, () -> {rechercheVille.rechercher(mot);});
+    }
+
+    @Test
+    public void WhenTextLengthSuperior_2_ThenReturnVancouverAndValence() {
+        rechercheVille = new RechercheVille();
+        String mot = "Va";
+        List<String> result = rechercheVille.rechercher(mot);
+        Assert.assertArrayEquals(List.of("Valence", "Vancouver").toArray(), result.toArray());
     }
 }
