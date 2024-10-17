@@ -23,4 +23,12 @@ public class RechercheVilleTest {
         List<String> result = rechercheVille.rechercher(mot);
         Assert.assertArrayEquals(List.of("Valence", "Vancouver").toArray(), result.toArray());
     }
+
+    @Test
+    public void WhenTextIsNotWellWrite_ThenShouldBeNotCaseSensitive() {
+        rechercheVille = new RechercheVille();
+        String mot = "vA";
+        List<String> result = rechercheVille.rechercher(mot);
+        Assert.assertArrayEquals(List.of("Valence", "Vancouver").toArray(), result.toArray());
+    }
 }
