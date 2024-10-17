@@ -39,4 +39,12 @@ public class RechercheVilleTest {
         List<String> result = rechercheVille.rechercher(mot);
         Assert.assertArrayEquals(List.of("Budapest").toArray(), result.toArray());
     }
+
+    @Test
+    public void WhenTextIsAsterix_ThenShouldReturnAll() {
+        rechercheVille = new RechercheVille();
+        String mot = "*";
+        List<String> result = rechercheVille.rechercher(mot);
+        Assert.assertArrayEquals(List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul").toArray(), result.toArray());
+    }
 }
