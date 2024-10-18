@@ -1,21 +1,13 @@
-Feature: User registration
+Feature: Customer registration
 
-  Scenario: User access register form
-    Given User who want to register
-    When a User want to register
-    Then User can access to register page
+  Scenario: Register a new user
+    Given A new user want to create an account
+    When a user send is "toto@test.com" "toto" and "password"
+    And the new user is add to the app
+    Then there is a message who validate Register
 
-  Scenario: User enter infos
-    Given User who want to register
-    When a User want to register
-    Then User give his informations
+  Scenario: Register a user already exist
+    Given A new user want to create an account
+    When a user send is "toto@test.com" "toto" and "password"
+    Then the user already exist error thrown
 
-  Scenario: User account create
-    Given User who want to register
-    When all User informations are here
-    Then User get confirm
-
-  Scenario: Error while creating account
-    Given User who want to register
-    When a username already exist
-    Then User get error
